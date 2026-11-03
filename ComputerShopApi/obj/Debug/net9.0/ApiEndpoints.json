@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "ComputerShopApi.Controllers.OsystemController",
+    "Method": "DeleteOs",
+    "RelativePath": "osystems/deleteOs",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerShopApi.Controllers.OsystemController",
     "Method": "NewOs",
     "RelativePath": "osystems/newOs",
     "HttpMethod": "POST",

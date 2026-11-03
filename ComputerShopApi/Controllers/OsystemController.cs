@@ -63,10 +63,7 @@ namespace ComputerShopApi.Controllers
 
                 return StatusCode(201, new { message = "Sikeres hozzáadás!", result = osystem });
             }
-            else
-            {
-                return StatusCode(400, new { message = "Hiba a hozzáadásban!", result = osystem });
-            }
+            return StatusCode(400, new { message = "Hiba a hozzáadásban!", result = osystem });
         }
 
         [HttpPut("updateOs")]
@@ -83,10 +80,20 @@ namespace ComputerShopApi.Controllers
                 _context.SaveChanges();
                 return StatusCode(200, new { message = "Sikeres módosítás!", result = osystem });
             }
-            else
+            return StatusCode(400, new { message = "Nem sikerült a módosítás!", result = osystem });
+        }
+
+        [HttpDelete("deleteOs")]
+        public object DeleteOs([FromQuery] Guid id)
+        {
+            var osystem = _context.Osystems.Find(id);
+            if (osystem != null)
             {
-                return StatusCode(400, new { message = "Nem sikerült a módosítás!", result = osystem });
+                _context.Osystems.Remove(osystem);
+                _context.SaveChanges();
+                return StatusCode(200, new { message = "Sikeres törlés!", result = osystem });
             }
+            return StatusCode(404, new { message = "Nincs ilyen Id!", result = osystem });
         }
     }
 }
