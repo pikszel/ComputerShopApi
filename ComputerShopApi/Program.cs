@@ -29,7 +29,6 @@ namespace ComputerShopApi
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();
