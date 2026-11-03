@@ -22,6 +22,36 @@ namespace ComputerShopApi.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("ComputerShopApi.Models.Computer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(37)");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<double>("Display")
+                        .HasColumnType("double");
+
+                    b.Property<int>("Memory")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("OsId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OsId");
+
+                    b.ToTable("Computers");
+                });
+
             modelBuilder.Entity("ComputerShopApi.Models.Osystem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -45,6 +75,17 @@ namespace ComputerShopApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Osystems");
+                });
+
+            modelBuilder.Entity("ComputerShopApi.Models.Computer", b =>
+                {
+                    b.HasOne("ComputerShopApi.Models.Osystem", "Os")
+                        .WithMany()
+                        .HasForeignKey("OsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Os");
                 });
 #pragma warning restore 612, 618
         }
