@@ -10,7 +10,7 @@ namespace ComputerShopApi.Models
         [MaxLength(36)]
         public Guid Id { get; set; }
 
-        [Column (TypeName = "nvarchar(37)")]
+        [Column (TypeName = "varchar(37)")]
         public string Brand { get; set; }
 
         [Column (TypeName = "double")]
@@ -22,5 +22,6 @@ namespace ComputerShopApi.Models
 
         [JsonIgnore]
         public Osystem Os { get; set; }
+        public Guid OsId { get; set; }
     }
 }

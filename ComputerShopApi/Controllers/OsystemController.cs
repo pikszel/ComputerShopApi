@@ -28,8 +28,8 @@ namespace ComputerShopApi.Controllers
             {
                 return new { message = "Hiba a lekérdezésben!", result = osystems };
             }
-
         }
+
         [HttpGet("byId")]
         public object GetById([FromQuery] Guid id)
         {

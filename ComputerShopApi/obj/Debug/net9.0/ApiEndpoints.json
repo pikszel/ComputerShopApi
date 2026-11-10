@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "ComputerShopApi.Controllers.ComputerController",
+    "Method": "GetAll",
+    "RelativePath": "computers/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerShopApi.Controllers.ComputerController",
+    "Method": "GetById",
+    "RelativePath": "computers/byId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerShopApi.Controllers.ComputerController",
+    "Method": "NewComputer",
+    "RelativePath": "computers/newComputer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newComputerDto",
+        "Type": "ComputerShopApi.Models.DTOs.NewComputerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComputerShopApi.Controllers.OsystemController",
     "Method": "GetAll",
     "RelativePath": "osystems/all",
