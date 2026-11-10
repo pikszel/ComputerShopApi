@@ -44,7 +44,6 @@ namespace ComputerShopApi.Controllers
         }
 
         [HttpPost("newOs")]
-
         public object NewOs([FromBody] NewOsystemDto newOsystemDto)
         {
             var osystem = new Osystem
