@@ -79,6 +79,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComputerShopApi.Controllers.OsCompController",
+    "Method": "GetAllOsAndComputer",
+    "RelativePath": "oscomp/allOsAndComputer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerShopApi.Controllers.OsCompController",
+    "Method": "osByIdWithComputers",
+    "RelativePath": "oscomp/osByIdWithComputers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComputerShopApi.Controllers.OsystemController",
     "Method": "GetAll",
     "RelativePath": "osystems/all",
